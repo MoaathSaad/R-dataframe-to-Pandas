@@ -9,7 +9,7 @@ def _make_r_call( file_args ):
     '''
 
     # run R via system call, using littler
-    call_args = [ '/usr/local/bin/lr', file_args['rds_to_pandas'], 
+    call_args = [ file_args['littler_path'], file_args['rds_to_pandas'], 
                   file_args['f'], file_args['out1'], file_args['out2'] ] 
 
     # capture R output to R_output.txt
@@ -17,6 +17,7 @@ def _make_r_call( file_args ):
         call( call_args, stdout = f, stderr = f )
 
 def read_rds( filename, 
+              littler_path = '/usr/local/bin/lr', 
               out_file1 = '../data/temp_rds_to_csv.csv', 
               out_file2 = '../data/temp_rds_to_json_coltypes.csv',
               keep_temp = False ):
@@ -36,6 +37,7 @@ def read_rds( filename,
     args = {'f': os.path.abspath( filename ), 
             'out1': os.path.abspath( out_file1 ),
             'out2': os.path.abspath( out_file2 ),
+            'littler_path': littler_path,
             'rds_to_pandas': dir_of_file + '/rds_to_pandas.R' }
 
     _make_r_call( args )

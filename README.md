@@ -1,6 +1,6 @@
 # R-dataframe-to-Pandas
 
-A package to load a saved .rds R data frame into Pandas. The package simply loads the data into R, saves it as a temporary .csv file and a temporary .json file containing the column types, and then loads the .csv data into Pandas.
+A package to load a saved .rds R data frame into Pandas. The package simply loads the data into R, saves it as a temporary .csv file and a temporary .json file containing the column types, and then loads the .csv data into Pandas. R is called via <a href = http://dirk.eddelbuettel.com/code/littler.html>littler</a>.
 
 To install run
 
@@ -10,6 +10,6 @@ from the terminal. Then simply use
 
 <pre><code>from load_rds import read_rds
 
-df = read_rds( 'my_saved_data.rds' )</code></pre>
+df = read_rds( 'my_saved_data.rds', littler_path = 'your_path_here' )</code></pre>
 
 from Python.
