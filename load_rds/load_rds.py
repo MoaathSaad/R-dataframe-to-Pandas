@@ -3,7 +3,6 @@ import os
 import json
 import pandas as pd
 
-
 def _make_r_call( file_args ):
     '''
     Make system call to rds_to_pandas.R to convert .rds file to json
@@ -17,7 +16,6 @@ def _make_r_call( file_args ):
     with open( "../data/R_output.txt", "w" ) as f:
         call( call_args, stdout = f, stderr = f )
 
-              # rds_to_pandas = '/Users/kdelrosso/Github/R-dataframe-to-Pandas/rds_to_pandas.R',
 def read_rds( filename, 
               out_file1 = '../data/temp_rds_to_csv.csv', 
               out_file2 = '../data/temp_rds_to_json_coltypes.csv',
@@ -32,7 +30,7 @@ def read_rds( filename,
     '''
     
     # full path to load_rds.py    
-    dir_of_file = os.path.dirname(os.path.abspath(__file__))
+    dir_of_file = os.path.dirname( os.path.abspath( __file__ ) )
 
     # arguments to _make_r_call()
     args = {'f': os.path.abspath( filename ), 
