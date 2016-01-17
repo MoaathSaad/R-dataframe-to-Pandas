@@ -8,7 +8,21 @@ if( class(try_catch) == "try-error" ){
     argv = list()
 }
 
-require(jsonlite)
+irequire = function( packages ) 
+    # loads a vector of packages and installs any that are missing
+{
+    sapply( packages, function(p) {
+        if( p %in% rownames( installed.packages() ) == FALSE ) {
+            install.packages(p)
+        }
+    })
+    
+    lapply( packages, require, character.only = TRUE )
+    
+    NULL
+}
+
+irequire( c('jsonlite') )
 
 convert_rds_to_json = 
     # INPUT: as .rds file containing a data frame

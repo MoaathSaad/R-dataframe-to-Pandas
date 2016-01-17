@@ -30,7 +30,7 @@ def read_rds( filename,
     '''
     
     # full path to load_rds.py    
-    dir_of_file = os.path.dirname( os.path.abspath( __file__ ) )
+    dir_of_file = os.path.dirname( os.path.abspath(__file__) )
 
     # arguments to _make_r_call()
     args = {'f': os.path.abspath( filename ), 
