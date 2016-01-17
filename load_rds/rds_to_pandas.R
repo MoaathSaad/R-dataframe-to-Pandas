@@ -13,7 +13,7 @@ irequire = function( packages )
 {
     sapply( packages, function(p) {
         if( p %in% rownames( installed.packages() ) == FALSE ) {
-            install.packages(p)
+            install.packages( p, repos='http://cran.us.r-project.org' )
         }
     })
     
