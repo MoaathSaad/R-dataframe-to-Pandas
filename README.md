@@ -4,16 +4,12 @@ A package to load a saved .rds R data frame into Pandas. The package simply load
 
 To install run
 
-<pre><code> 
-python setup.py install
-</code></pre>
+<pre><code> python setup.py install</code></pre>
 
 from the terminal. Then simply use
 
-<pre><code> 
-from load_rds import read_rds
+<pre><code>from load_rds import read_rds
 
-df = read_rds( 'my_saved_data.rds' )
-</code></pre>
+df = read_rds( 'my_saved_data.rds' )</code></pre>
 
 from Python.
