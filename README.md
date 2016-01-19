@@ -13,3 +13,13 @@ from the terminal. Then simply use
 df = read_rds( 'my_saved_data.rds', littler_path = 'your_path_here' )</code></pre>
 
 from Python.
+
+####Note on littler installation
+
+The default <code>littler_path</code> location for <code>read_rds()</code> is <code>/usr/local/bin/lr</code>. We can configure this path during the littlr installation by running the following from the terminal. On my system (OS X) the <code>installed_littlr_path</code> is <code>/Users/username/Library/R/3.2/library/littler/bin/r</code>. 
+
+<pre><code>echo "install.packages( 'littler', repos='http://cran.us.r-project.org' )" | R --vanilla
+
+# create symbolic link
+ln -s your_installed_littlr_path /usr/local/bin/lr
+</code></pre>
